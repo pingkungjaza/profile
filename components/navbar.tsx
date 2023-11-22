@@ -2,12 +2,10 @@ import {
 	Navbar as NextUINavbar,
 	NavbarContent,
 	NavbarMenu,
-	NavbarMenuToggle,
 	NavbarBrand,
 	NavbarItem,
 	NavbarMenuItem,
 } from "@nextui-org/navbar";
-import { Button } from "@nextui-org/button";
 import { Kbd } from "@nextui-org/kbd";
 import { Link } from "@nextui-org/link";
 import { Input } from "@nextui-org/input";
@@ -20,14 +18,15 @@ import clsx from "clsx";
 
 import { ThemeSwitch } from "@/components/theme-switch";
 import {
-	TwitterIcon,
 	GithubIcon,
 	DiscordIcon,
-	HeartFilledIcon,
 	SearchIcon,
+	LinkedinIcon,
+	PhoneIcon,
+	EmailIcon
 } from "@/components/icons";
 
-import { Logo } from "@/components/icons";
+import { Avatar } from "@nextui-org/react";
 
 export const Navbar = () => {
 	const searchInput = (
@@ -56,11 +55,19 @@ export const Navbar = () => {
 			<NavbarContent className="basis-1/5 sm:basis-full" justify="start">
 				<NavbarBrand as="li" className="gap-3 max-w-fit">
 					<NextLink className="flex justify-start items-center gap-1" href="/">
-						<Logo />
-						<p className="font-bold text-inherit">ACME</p>
+						<Avatar
+							isBordered
+							as="button"
+							className="transition-transform mr-2"
+							color="secondary"
+							name="Wittawat Phumthong"
+							size="sm"
+							src="/images/profile.jpeg"
+						/>
+						<p className="font-bold text-inherit">WITTAWAT</p>
 					</NextLink>
 				</NavbarBrand>
-				<ul className="hidden lg:flex gap-4 justify-start ml-2">
+				<ul className="hidden sm:flex gap-4 justify-start ml-2">
 					{siteConfig.navItems.map((item) => (
 						<NavbarItem key={item.href}>
 							<NextLink
@@ -79,42 +86,28 @@ export const Navbar = () => {
 			</NavbarContent>
 
 			<NavbarContent
-				className="hidden sm:flex basis-1/5 sm:basis-full"
+				className="flex basis-1/5 sm:basis-full"
 				justify="end"
 			>
-				<NavbarItem className="hidden sm:flex gap-2">
-					<Link isExternal href={siteConfig.links.twitter} aria-label="Twitter">
-						<TwitterIcon className="text-default-500" />
-					</Link>
-					<Link isExternal href={siteConfig.links.discord} aria-label="Discord">
-						<DiscordIcon className="text-default-500" />
+				<NavbarItem className="flex gap-2">
+					<Link isExternal href={siteConfig.links.linkedin} aria-label="Linkedin">
+						<LinkedinIcon className="text-default-500" />
 					</Link>
 					<Link isExternal href={siteConfig.links.github} aria-label="Github">
 						<GithubIcon className="text-default-500" />
 					</Link>
+					<Link isExternal href={siteConfig.links.discord} aria-label="Discord">
+						<DiscordIcon className="text-default-500" />
+					</Link>
+					<Link isExternal href={`mailto:${siteConfig.links.email}`} aria-label="Phone">
+						<EmailIcon className="text-default-500" />
+					</Link>
+					<Link isExternal href={`tel:${siteConfig.links.phone}`} aria-label="Phone">
+						<PhoneIcon className="text-default-500" />
+					</Link>
 					<ThemeSwitch />
 				</NavbarItem>
 				<NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem>
-				<NavbarItem className="hidden md:flex">
-					<Button
-            isExternal
-						as={Link}
-						className="text-sm font-normal text-default-600 bg-default-100"
-						href={siteConfig.links.sponsor}
-						startContent={<HeartFilledIcon className="text-danger" />}
-						variant="flat"
-					>
-						Sponsor
-					</Button>
-				</NavbarItem>
-			</NavbarContent>
-
-			<NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
-				<Link isExternal href={siteConfig.links.github} aria-label="Github">
-					<GithubIcon className="text-default-500" />
-				</Link>
-				<ThemeSwitch />
-				<NavbarMenuToggle />
 			</NavbarContent>
 
 			<NavbarMenu>
@@ -127,8 +120,8 @@ export const Navbar = () => {
 									index === 2
 										? "primary"
 										: index === siteConfig.navMenuItems.length - 1
-										? "danger"
-										: "foreground"
+											? "danger"
+											: "foreground"
 								}
 								href="#"
 								size="lg"
