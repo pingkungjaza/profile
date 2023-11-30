@@ -73,19 +73,19 @@ export const Navbar = () => {
 				justify="end"
 			>
 				<NavbarItem className="flex gap-2">
-					<Link isExternal href={siteConfig.links.linkedin} aria-label="Linkedin">
+					<Link isExternal href={siteConfig.links.linkedin.url} aria-label="Linkedin">
 						<LinkedinIcon className="text-default-500" />
 					</Link>
-					<Link isExternal href={siteConfig.links.github} aria-label="Github">
+					<Link isExternal href={siteConfig.links.github.url} aria-label="Github">
 						<GithubIcon className="text-default-500" />
 					</Link>
-					<Link isExternal href={siteConfig.links.discord} aria-label="Discord">
+					<Link isExternal href={siteConfig.links.discord.url} aria-label="Discord">
 						<DiscordIcon className="text-default-500" />
 					</Link>
-					<Link isExternal href={`mailto:${siteConfig.links.email}`} aria-label="Phone">
+					<Link isExternal href={`mailto:${siteConfig.links.email.url}`} aria-label="Phone">
 						<EmailIcon className="text-default-500" />
 					</Link>
-					<Link isExternal href={`tel:${siteConfig.links.phone}`} aria-label="Phone">
+					<Link isExternal href={`tel:${siteConfig.links.phone.url}`} aria-label="Phone">
 						<PhoneIcon className="h-6 w-6 text-default-500" />
 					</Link>
 					<ThemeSwitch />
