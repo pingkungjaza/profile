@@ -22,11 +22,11 @@ export const siteConfig = {
 		}
 	],
 	links: {
-		github: "https://github.com/pingkungjaza",
-		linkedin: "https://www.linkedin.com/in/wittawat-phumthong",
-		discord: "https://discord.gg/BS9x5cnYjd",
-		email: "ph.wittawat.p@gmail.com",
-		phone: '+660899798788',
-		resume: 'https://drive.google.com/file/d/11gqerY5RWlphGlsSjDJtfdAlNcLBjTi0/view?usp=sharing'
+		github: { url: "https://github.com/pingkungjaza", label: 'GitHub' },
+		linkedin: { url: "https://www.linkedin.com/in/wittawat-phumthong", label: 'LinkedIn' },
+		discord: { url: "https://discord.gg/BS9x5cnYjd", label: 'Discord' },
+		email: { url: "ph.wittawat.p@gmail.com", label: 'Email' },
+		phone: { url: '+66899798788', label: 'Phone' },
+		resume: { url: 'https://drive.google.com/file/d/11gqerY5RWlphGlsSjDJtfdAlNcLBjTi0/view?usp=sharing', label: 'Resume' }
 	},
 };
