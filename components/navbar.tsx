@@ -27,7 +27,6 @@ import {
 import { PhoneIcon } from '@heroicons/react/24/solid'
 
 import AvatarProfile from "./avatarProfile";
-import BackgroundMusic from "./backgroundMusic";
 import { useState } from "react";
 
 export const Navbar = () => {
@@ -48,7 +47,6 @@ export const Navbar = () => {
 							WITTAWAT
 						</p>
 					</NextLink>
-					<BackgroundMusic />
 				</NavbarBrand>
 				<ul className="hidden sm:flex gap-4 justify-start ml-2">
 					{siteConfig.navItems.map((item) => (
