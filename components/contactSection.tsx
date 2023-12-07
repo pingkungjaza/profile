@@ -8,7 +8,7 @@ const contactSection = () => {
   return (
     <section id="contact" className='h-[100vh] grid place-items-center'>
       <Card
-        isBlurred
+
         radius="lg"
       >
         <CardBody className='grid grid-cols-1 md:grid-cols-2 gap-8 p-10'>
