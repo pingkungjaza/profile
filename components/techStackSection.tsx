@@ -1,15 +1,15 @@
-import { Card, CardBody, CardFooter, Chip, Image, Tab, Tabs } from '@nextui-org/react'
+import { Card, CardFooter, Chip, Image, Tab, Tabs } from '@nextui-org/react'
 import { TECHS } from '@/config/constant'
 import React from 'react'
 import { TechType } from '@/config/type'
 
 const techStackSection = () => {
   return (
-    <section id="tech-stack" className='h-[100vh]'>
+    <section id="tech-stack" className='min-h-[100vh]'>
       <Tabs
         aria-label="Dynamic tabs"
         color='secondary'
-        className='flex place-content-center width-[100%] align-stretch'
+        className='flex place-content-center width-[100%] align-stretch mt-8'
         items={Object.values(TechType).map(t => ({ id: t }))}
       >
         {Object.values(TechType).map((t, index) => {
@@ -28,19 +28,15 @@ const techStackSection = () => {
                 </div>
               }
             >
-              <div className="gap-2 grid grid-cols-2 md:grid-cols-4">
+              <div className="gap-2 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6">
                 {items.map((item, idx) =>
                   <Card shadow="sm" key={idx} isPressable onPress={() => console.log("item pressed")}>
-                    <CardBody className="overflow-visible p-2">
-                      <Image
-                        shadow="sm"
-                        radius="md"
-                        width="100%"
-                        alt={item.title}
-                        className="w-full object-cover h-[220px] object-contain"
-                        src={item.img}
-                      />
-                    </CardBody>
+                    <Image
+                      shadow="sm"
+                      alt={item.title}
+                      className="object-contain aspect-[1/1] p-1"
+                      src={item.img}
+                    />
                     <CardFooter className="text-small justify-between">
                       <b>{item.title}</b>
                       <p className="text-default-500 capitalize">

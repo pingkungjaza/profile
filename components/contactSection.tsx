@@ -6,7 +6,7 @@ import { DocumentTextIcon } from '@heroicons/react/24/solid'
 
 const contactSection = () => {
   return (
-    <section id="contact" className='h-[100vh] grid place-items-center'>
+    <section id="contact" className='min-h-[100vh] grid place-items-center'>
       <Card
 
         radius="lg"
