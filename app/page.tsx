@@ -13,7 +13,7 @@ export default function Home() {
 
 	return (
 		<>
-			<section id='home' className="flex flex-col items-center justify-center gap-4 pb-8 md:pb-10 h-[100vh]">
+			<section id='home' className="flex flex-col items-center justify-center gap-4 pb-8 md:pb-10 min-h-[100vh]">
 				<div className="inline-block max-w-lg text-center justify-center">
 					<div className="flex justify-center">
 						<Avatar
