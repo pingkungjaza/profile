@@ -16,7 +16,7 @@ const WorkSection = () => {
   }, [theme])
 
   return (
-    <section id="works" className='h-[100vh]'>
+    <section id="works" className='min-h-[100vh]'>
       <VerticalTimeline animate lineColor={bgColor}>
         {WORKS.map((work, index) =>
           <VerticalTimelineElement
